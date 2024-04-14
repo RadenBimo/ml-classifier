@@ -9,7 +9,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 DEBUG = True
 
 # Connect to the database
-SQLALCHEMY_DATABASE_URI = 'mysql+mysqlconnector://root:@localhost/ml_classify'
+SQLALCHEMY_DATABASE_URI = 'mysql+mysqlconnector://root:@localhost/ml_classifier_db'
 
 # Turn off the Flask-SQLAlchemy event system and warning
 SQLALCHEMY_TRACK_MODIFICATIONS = False

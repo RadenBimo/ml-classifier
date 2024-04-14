@@ -6,9 +6,9 @@ from models.User import User
 from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 
-class UserController:
+class TrainingDataController:
     def index(self):
-        return jsonify({"lulu": 'lulu'})
+        return jsonify({"lili": 'lili'})
 
     def store(self):
         return ''
