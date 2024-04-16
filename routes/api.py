@@ -16,5 +16,5 @@ api.route('users/<int:id>/edit', methods=['POST'], endpoint='user_update')(userC
 api.route('users/<int:id>', methods=['DELETE'], endpoint='user_destroy')(userController.destroy)
 
 api.route('training-data/', methods=['GET'], endpoint='td_index')(trainingDataController.index)
-# api.route('training-data/create', methods=['POST'])(trainingDataController.store)
-# api.route('training-data/<int:id>', methods=['POST'])(trainingDataController.show)
+api.route('training-data/create', methods=['POST'])(trainingDataController.store)
+api.route('training-data/<int:id>', methods=['POST'])(trainingDataController.show)
