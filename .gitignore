@@ -260,3 +260,5 @@ poetry.toml
 pyrightconfig.json
 
 # End of https://www.toptal.com/developers/gitignore/api/flask,python
+
+/modeling/Dataset/real_training_data.csv
