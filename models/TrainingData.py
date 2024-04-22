@@ -9,6 +9,7 @@ class TrainingData(db.Model):
     message = db.Column(db.String)
     category = db.Column(db.String)
     client_id = db.Column(db.Integer)
+    product_id = db.Column(db.Integer)
 
     @property
     def serialize(self):
@@ -17,6 +18,7 @@ class TrainingData(db.Model):
             'message': self.message,
             'category': self.category,
             'client_id': self.client_id,
+            'product_id': self.product_id
         }
     
     def __repr__(self):
