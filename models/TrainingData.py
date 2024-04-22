@@ -1,13 +1,12 @@
-# from flask_sqlalchemy import SQLAlchemy
-# db = SQLAlchemy()
-
+from sqlalchemy.dialects.mysql import LONGTEXT
 from app import db
+
 class TrainingData(db.Model):
     __tablename__ = 'training_datas'
 
     id = db.Column(db.Integer, primary_key=True)
-    message = db.Column(db.String)
-    category = db.Column(db.String)
+    message = db.Column(LONGTEXT)
+    category = db.Column(db.String(100))
     client_id = db.Column(db.Integer)
 
     @property
