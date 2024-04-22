@@ -3,6 +3,7 @@ from flask import render_template, redirect, url_for, request, abort, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from models.TrainingData import TrainingData
 from models.ModelProduct import ModelProduct
+from services.utils import Utils
 from app import db
 # db = SQLAlchemy()
 class TrainingDataController:
@@ -22,9 +23,14 @@ class TrainingDataController:
 
             # Loop through messages, clean and, save them to database
             for message_data in data.get('data', []):
+                # message = TrainingData(
+                #     client_id=clientId,
+                #     message=DataCleaning(message_data.get('message')).clean(),
+                #     category=message_data.get('category'),
+                # )
                 message = TrainingData(
                     client_id=clientId,
-                    message=DataCleaning(message_data.get('message')).clean(),
+                    message=Utils.dataClean(message_data.get('message')),
                     category=message_data.get('category'),
                 )
                 db.session.add(message)
