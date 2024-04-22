@@ -17,6 +17,9 @@ class TrainingDataController:
 
             # Extract client ID
             clientId = data.get('client_id')
+
+            db.session.query(TrainingData).filter(TrainingData.client_id == 1).delete()
+
             # Loop through messages, clean and, save them to database
             for message_data in data.get('data', []):
                 message = TrainingData(
